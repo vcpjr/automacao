@@ -1,0 +1,29 @@
+# 🏠 Automação Residencial
+
+Projeto de Infraestrutura como Código (IaC) para a automação residencial.
+
+## Objetivos
+
+- Home Assistant como plataforma central
+- Zigbee2MQTT como controlador Zigbee
+- Frigate para análise de vídeo
+- Docker Compose como orquestrador
+- Toda a infraestrutura versionada no Git
+
+## Hardware
+
+- AMD Ryzen 7 PRO 5750E
+- Ubuntu Server
+
+## Serviços
+
+- Home Assistant
+- Mosquitto
+- Zigbee2MQTT
+- Frigate
+- Portainer
+- Homepage
+- Node-RED
+- Dozzle
+
+Consulte a pasta `docs/` para a documentação.
