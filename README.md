@@ -27,3 +27,5 @@ Projeto de Infraestrutura como Código (IaC) para a automação residencial.
 - Dozzle
 
 Consulte a pasta `docs/` para a documentação.
+
+- [Integrações no Home Assistant: interfone Hikvision, fechadura C90, NSPanel Pro, Yoosee, Rossi Nitro e Alexa](docs/INTEGRACOES-HA.md)
