@@ -30,3 +30,5 @@ Consulte a pasta `docs/` para a documentação.
 
 - [Integrações no Home Assistant: interfone Hikvision, fechadura C90, NSPanel Pro, Yoosee, Rossi Nitro e Alexa](docs/INTEGRACOES-HA.md)
 - [Coordenador Zigbee: incidente de set–nov/2026, atualização de firmware e recuperação](docs/ZIGBEE-COORDENADOR.md)
+- [Acesso ao Home Assistant: rede local e remoto via Tailscale](docs/ACESSO-REMOTO.md)
+- [Câmeras Intelbras no Home Assistant: NVR, canais, codificação e RTSP](docs/CAMERAS.md)
