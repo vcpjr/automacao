@@ -38,6 +38,12 @@
 | Intelbras VIP 1230 G2 | 2 |
 | Intelbras NVD 1408-P | 1 |
 
+## Painéis
+
+| Equipamento | Qtde |
+|---|---:|
+| Sonoff NSPanel Pro | 1 |
+
 ## Vídeo Porteiro
 
 - Hikvision DS-KB8113-IME1

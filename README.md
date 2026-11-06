@@ -33,3 +33,4 @@ Consulte a pasta `docs/` para a documentação.
 - [Acesso ao Home Assistant: rede local e remoto via Tailscale](docs/ACESSO-REMOTO.md)
 - [Câmeras Intelbras no Home Assistant: NVR, canais, codificação e RTSP](docs/CAMERAS.md)
 - [Frigate: detecção de pessoas nas câmeras e aviso no iPhone](docs/FRIGATE.md)
+- [NSPanel Pro: app do Home Assistant no painel da cozinha](docs/NSPANEL-PRO.md)

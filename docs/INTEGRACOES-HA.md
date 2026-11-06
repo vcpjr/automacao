@@ -132,13 +132,15 @@ cards:
 
 O caminho mais simples é rodar o app oficial do HA no próprio painel, instalado pela loja F-Droid que vem no firmware 4.x. Ele mostra o mesmo dashboard do celular, com vídeo e botões.
 
+**Passos 1 a 6 feitos em 06/11/2026.** O resultado e os problemas encontrados estão em [NSPANEL-PRO.md](NSPANEL-PRO.md). O serviço do painel ficou `notify.mobile_app_painel`, e o do iPhone é `notify.mobile_app_iphone_de_vilmar`. O passo 7 espera a instalação do interfone.
+
 1. No app eWeLink, atualize o NSPanel Pro para o firmware mais recente (4.2 ou superior permite escolher o app de inicialização).
 2. No HA, crie um usuário só para o painel: Configurações → Pessoas → Adicionar → usuário `painel`, sem permissão de admin.
 3. No painel: deslize de cima para baixo → F-Droid → busque Home Assistant → Instalar.
-4. Abra o app. Ele acha o servidor sozinho; se não achar, digite `http://IP_DO_HA:8123`. Entre com o usuário `painel` e nomeie o dispositivo como `nspanel_pro`.
+4. Abra o app. Ele acha o servidor sozinho; se não achar, digite `http://IP_DO_HA:8123`. Entre com o usuário `painel` e dê um nome ao dispositivo. O nome vira o serviço `notify.mobile_app_<nome>`; na instalação de 06/11/2026 ficou `painel`.
 5. No app: Configurações → Companion app → seu servidor → Conexão persistente → Sempre. Sem isso, os comandos de tela chegam atrasados.
 6. Nas configurações avançadas do painel, em gerenciamento de apps, defina o Home Assistant como app de inicialização. O botão lateral volta para a tela nativa da Sonoff.
-7. Crie a automação que acorda o painel na aba Portão quando tocam a campainha (Automações → Nova → ⋮ → Editar em YAML). Troque `SEU_CELULAR` pelo nome que aparece em Ferramentas do desenvolvedor → Ações → `notify.mobile_app_`. Confira o caminho da aba abrindo-a no navegador (ex.: `/lovelace/portao`).
+7. Crie a automação que acorda o painel na aba Portão quando tocam a campainha (Automações → Nova → ⋮ → Editar em YAML). Os nomes dos serviços aparecem em Ferramentas do desenvolvedor → Ações → `notify.mobile_app_`. Confira o caminho da aba abrindo-a no navegador (ex.: `/lovelace/portao`).
 
 ```
 alias: Campainha - mostrar portão
@@ -148,21 +150,21 @@ triggers:
     entity_id: sensor.interfone_chamada
     to: ring
 actions:
-  - action: notify.mobile_app_nspanel_pro
+  - action: notify.mobile_app_painel
     data:
       message: command_screen_on
-  - action: notify.mobile_app_nspanel_pro
+  - action: notify.mobile_app_painel
     data:
       message: command_webview
       data:
         command: /lovelace/portao
-  - action: notify.mobile_app_SEU_CELULAR
+  - action: notify.mobile_app_iphone_de_vilmar
     data:
       title: Campainha
       message: Tem alguém no portão
       data:
         image: /api/camera_proxy/camera.interfone
-  - action: notify.mobile_app_nspanel_pro
+  - action: notify.mobile_app_painel
     data:
       message: TTS
       data:
