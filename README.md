@@ -32,4 +32,4 @@ Consulte a pasta `docs/` para a documentação.
 - [Coordenador Zigbee: incidente de set–nov/2026, atualização de firmware e recuperação](docs/ZIGBEE-COORDENADOR.md)
 - [Acesso ao Home Assistant: rede local e remoto via Tailscale](docs/ACESSO-REMOTO.md)
 - [Câmeras Intelbras no Home Assistant: NVR, canais, codificação e RTSP](docs/CAMERAS.md)
-- [Frigate: detecção de pessoas (em andamento)](docs/FRIGATE.md)
+- [Frigate: detecção de pessoas nas câmeras e aviso no iPhone](docs/FRIGATE.md)

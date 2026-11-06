@@ -1,8 +1,8 @@
 # Câmeras Intelbras no Home Assistant
 
-Atualizado em 05/11/2026.
+Atualizado em 06/11/2026.
 
-As 4 câmeras Intelbras chegam ao Home Assistant através do NVR NVD 1408-P, por RTSP. O HA usa o stream extra (704x480, H.264) e mostra as câmeras no painel **Câmeras** (`/dashboard-cameras`).
+As 4 câmeras Intelbras chegam ao Home Assistant através do NVR NVD 1408-P, por RTSP. O HA usa o stream extra (704x480, H.264) e mostra as câmeras no painel **Câmeras** (`/dashboard-cameras`). As mesmas câmeras também passam pelo Frigate, que detecta pessoas e avisa no iPhone (ver [FRIGATE.md](FRIGATE.md)).
 
 ## Topologia
 
@@ -17,7 +17,14 @@ As câmeras ficam nas portas PoE do NVR, numa sub-rede interna (`10.1.1.x`) que 
 | 5 | 10.1.1.133 | VIPC-1230-B-G2 | Offline. Provavelmente é um cadastro antigo (ver Pendências). |
 | 7 | 10.1.1.128 | Mesma câmera do canal 1 | Cadastro duplicado (ver Pendências). |
 
-No HA, as câmeras dos canais 2 a 4 aparecem como "Câmera da frente 2", "Câmera Escritório" e "Câmera quarto de visitas".
+Nomes de cada canal no HA (câmera genérica) e no Frigate:
+
+| Canal | Câmera genérica no HA | Nome no Frigate |
+| --- | --- | --- |
+| 1 | Câmera da frente 1 | `frente_1` |
+| 2 | Câmera da frente 2 | `frente_2` |
+| 3 | Câmera quarto de visitas | `quarto_visitas` |
+| 4 | Câmera Escritório | `escritorio` |
 
 ## Codificação
 
@@ -59,4 +66,4 @@ O painel usa cards de imagem: cada câmera mostra uma foto atualizada a cada 10 
 - [ ] Canal 5 offline: se não houver uma 5ª câmera instalada, apagar o cadastro no NVR. Se houver, verificar o cabo e a porta PoE.
 - [ ] Confirmar a remoção do canal 7, que é o cadastro duplicado da câmera do canal 1.
 - [ ] Criar no NVR um usuário só de visualização, com senha própria, e usá-lo no HA no lugar do `admin`.
-- [ ] Frigate, para detecção de pessoas e veículos e gravação inteligente (Sprint 3 do [ROADMAP](ROADMAP.md)).
+- [x] Frigate com detecção de pessoas, gravação de eventos e aviso no iPhone, em produção desde 06/11/2026 (ver [FRIGATE.md](FRIGATE.md)).

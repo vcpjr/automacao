@@ -14,8 +14,8 @@
 - [ ] Organização por áreas
 
 ## Sprint 3
-- [ ] Frigate
-- [ ] Intelbras
+- [x] Frigate (06/11/2026, ver [FRIGATE.md](FRIGATE.md))
+- [x] Intelbras (05/11/2026, ver [CAMERAS.md](CAMERAS.md))
 - [ ] Hikvision
 
 ## Sprint 4
